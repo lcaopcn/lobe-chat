@@ -21,11 +21,13 @@ import { LobeHigressAI } from './higress';
 import { LobeHuggingFaceAI } from './huggingface';
 import { LobeHunyuanAI } from './hunyuan';
 import { LobeInternLMAI } from './internlm';
+import { LobeJinaAI } from './jina';
 import { LobeLMStudioAI } from './lmstudio';
 import { LobeMinimaxAI } from './minimax';
 import { LobeMistralAI } from './mistral';
 import { LobeMoonshotAI } from './moonshot';
 import { LobeNovitaAI } from './novita';
+import { LobeNvidiaAI } from './nvidia';
 import { LobeOllamaAI } from './ollama';
 import { LobeOpenAI } from './openai';
 import { LobeOpenRouterAI } from './openrouter';
@@ -48,6 +50,7 @@ import {
   TextToSpeechPayload,
 } from './types';
 import { LobeUpstageAI } from './upstage';
+import { LobeVLLMAI } from './vllm';
 import { LobeWenxinAI } from './wenxin';
 import { LobeXAI } from './xai';
 import { LobeZeroOneAI } from './zeroone';
@@ -152,11 +155,13 @@ class AgentRuntime {
       huggingface: { apiKey?: string; baseURL?: string };
       hunyuan: Partial<ClientOptions>;
       internlm: Partial<ClientOptions>;
+      jina: Partial<ClientOptions>;
       lmstudio: Partial<ClientOptions>;
       minimax: Partial<ClientOptions>;
       mistral: Partial<ClientOptions>;
       moonshot: Partial<ClientOptions>;
       novita: Partial<ClientOptions>;
+      nvidia: Partial<ClientOptions>;
       ollama: Partial<ClientOptions>;
       openai: Partial<ClientOptions>;
       openrouter: Partial<ClientOptions>;
@@ -170,6 +175,7 @@ class AgentRuntime {
       tencentcloud: Partial<ClientOptions>;
       togetherai: Partial<ClientOptions>;
       upstage: Partial<ClientOptions>;
+      vllm: Partial<ClientOptions>;
       wenxin: Partial<ClientOptions>;
       xai: Partial<ClientOptions>;
       zeroone: Partial<ClientOptions>;
@@ -222,6 +228,11 @@ class AgentRuntime {
 
       case ModelProvider.Ollama: {
         runtimeModel = new LobeOllamaAI(params.ollama);
+        break;
+      }
+
+      case ModelProvider.VLLM: {
+        runtimeModel = new LobeVLLMAI(params.vllm);
         break;
       }
 
@@ -300,6 +311,11 @@ class AgentRuntime {
         break;
       }
 
+      case ModelProvider.Nvidia: {
+        runtimeModel = new LobeNvidiaAI(params.nvidia);
+        break;
+      }
+
       case ModelProvider.Baichuan: {
         runtimeModel = new LobeBaichuanAI(params.baichuan ?? {});
         break;
@@ -352,6 +368,11 @@ class AgentRuntime {
 
       case ModelProvider.XAI: {
         runtimeModel = new LobeXAI(params.xai);
+        break;
+      }
+
+      case ModelProvider.Jina: {
+        runtimeModel = new LobeJinaAI(params.jina ?? {});
         break;
       }
 
