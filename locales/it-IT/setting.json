@@ -6,6 +6,7 @@
     "chat": "Preferenze di chat",
     "meta": "Informazioni assistente",
     "modal": "Impostazioni modello",
+    "opening": "Impostazioni di apertura",
     "plugin": "Impostazioni plugin",
     "prompt": "Impostazioni ruolo",
     "tts": "Servizio vocale"
@@ -253,6 +254,21 @@
       "title": "Apertura Mentale"
     }
   },
+  "settingOpening": {
+    "openingMessage": {
+      "desc": "Messaggio di apertura quando si avvia la conversazione, utilizzato per presentare le funzionalità dell'assistente",
+      "placeholder": "Ciao, sono l'assistente personalizzato, puoi iniziare subito a conversare con me oppure andare su Impostazioni assistente per completare le mie informazioni.",
+      "title": "Messaggio di apertura"
+    },
+    "openingQuestions": {
+      "desc": "Domande guida visualizzate all'inizio della conversazione",
+      "empty": "Nessuna domanda disponibile",
+      "placeholder": "Inserisci una domanda",
+      "repeat": "La domanda esiste già",
+      "title": "Domande di apertura"
+    },
+    "title": "Impostazioni di apertura"
+  },
   "settingPlugin": {
     "title": "Elenco dei plugin"
   },
@@ -345,6 +361,33 @@
       "title": "Tema"
     },
     "title": "Impostazioni del tema"
+  },
+  "storage": {
+    "actions": {
+      "export": {
+        "button": "Esporta",
+        "exportType": {
+          "agent": "Esporta impostazioni assistente",
+          "agentWithMessage": "Esporta assistente e messaggi",
+          "all": "Esporta impostazioni globali e tutti i dati degli assistenti",
+          "allAgent": "Esporta tutte le impostazioni degli assistenti",
+          "allAgentWithMessage": "Esporta tutti gli assistenti e messaggi",
+          "globalSetting": "Esporta impostazioni globali"
+        },
+        "title": "Esporta dati"
+      },
+      "import": {
+        "button": "Importa",
+        "title": "Importa dati"
+      },
+      "title": "Operazioni avanzate"
+    },
+    "desc": "Utilizzo dello storage nel browser attuale",
+    "embeddings": {
+      "used": "Storage vettoriale"
+    },
+    "title": "Storage dati",
+    "used": "Utilizzo dello storage"
   },
   "submitAgentModal": {
     "button": "Invia assistente",
@@ -439,6 +482,7 @@
     "hotkey": "Scorciatoie",
     "llm": "Modello linguistico",
     "provider": "Fornitore di servizi AI",
+    "storage": "Storage dati",
     "sync": "云端同步",
     "system-agent": "Assistente di sistema",
     "tts": "Servizio vocale"

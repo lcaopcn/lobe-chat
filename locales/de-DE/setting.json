@@ -6,6 +6,7 @@
     "chat": "Chat-Präferenz",
     "meta": "Assistenteninformation",
     "modal": "Modell-Einstellungen",
+    "opening": "Eröffnungs Einstellungen",
     "plugin": "Plugin-Einstellungen",
     "prompt": "Rollenkonfiguration",
     "tts": "Sprachdienst"
@@ -253,6 +254,21 @@
       "title": "Offenheit des Denkens"
     }
   },
+  "settingOpening": {
+    "openingMessage": {
+      "desc": "Die Eröffnungsnachricht beim Start des Gesprächs, um die Funktionen des Assistenten vorzustellen",
+      "placeholder": "Hallo, ich bin der benutzerdefinierte Assistent. Du kannst sofort mit mir sprechen oder zu den Assistenteneinstellungen gehen, um meine Informationen zu vervollständigen.",
+      "title": "Eröffnungsnachricht"
+    },
+    "openingQuestions": {
+      "desc": "Leitfragen, die zu Beginn des Gesprächs angezeigt werden",
+      "empty": "Keine Fragen vorhanden",
+      "placeholder": "Bitte Frage eingeben",
+      "repeat": "Frage existiert bereits",
+      "title": "Eröffnungsfragen"
+    },
+    "title": "Eröffnungs Einstellungen"
+  },
   "settingPlugin": {
     "title": "Plugin-Liste"
   },
@@ -345,6 +361,33 @@
       "title": "Thema"
     },
     "title": "Thema einstellen"
+  },
+  "storage": {
+    "actions": {
+      "export": {
+        "button": "Exportieren",
+        "exportType": {
+          "agent": "Exportiere Assistenteneinstellungen",
+          "agentWithMessage": "Exportiere Assistenten und Nachrichten",
+          "all": "Exportiere globale Einstellungen und alle Assistentendaten",
+          "allAgent": "Exportiere alle Assistenteneinstellungen",
+          "allAgentWithMessage": "Exportiere alle Assistenten und Nachrichten",
+          "globalSetting": "Exportiere globale Einstellungen"
+        },
+        "title": "Daten exportieren"
+      },
+      "import": {
+        "button": "Importieren",
+        "title": "Daten importieren"
+      },
+      "title": "Erweiterte Aktionen"
+    },
+    "desc": "Speicherverbrauch im aktuellen Browser",
+    "embeddings": {
+      "used": "Vektorspeicher"
+    },
+    "title": "Datenspeicher",
+    "used": "Speicherverbrauch"
   },
   "submitAgentModal": {
     "button": "Assistent einreichen",
@@ -439,6 +482,7 @@
     "hotkey": "Tastenkombinationen",
     "llm": "Sprachmodell",
     "provider": "KI-Dienstanbieter",
+    "storage": "Datenspeicher",
     "sync": "Cloud-Synchronisierung",
     "system-agent": "Systemassistent",
     "tts": "Sprachdienste"

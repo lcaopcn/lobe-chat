@@ -6,6 +6,7 @@ export default {
     chat: '聊天偏好',
     meta: '助手信息',
     modal: '模型设置',
+    opening: '开场设置',
     plugin: '插件设置',
     prompt: '角色设定',
     tts: '语音服务',
@@ -255,6 +256,21 @@ export default {
       title: '思维开放度',
     },
   },
+  settingOpening: {
+    openingMessage: {
+      desc: '打开会话时的开场消息，用来介绍助手的功能',
+      placeholder: '你好，我是自定义助手。你可以立即与我开始对话，也可以前往助手设置完善我的信息。',
+      title: '开场消息',
+    },
+    openingQuestions: {
+      desc: '会话开始时展示的引导性问题',
+      empty: '暂无问题',
+      placeholder: '请输入问题',
+      repeat: '问题已存在',
+      title: '开场问题',
+    },
+    title: '开场设置',
+  },
   settingPlugin: {
     title: '插件列表',
   },
@@ -347,6 +363,33 @@ export default {
       title: '主题',
     },
     title: '主题设置',
+  },
+  storage: {
+    actions: {
+      export: {
+        button: '导出',
+        exportType: {
+          agent: '导出助手设定',
+          agentWithMessage: '导出助手和消息',
+          all: '导出全局设置和所有助手数据',
+          allAgent: '导出所有助手设定',
+          allAgentWithMessage: '导出所有助手和消息',
+          globalSetting: '导出全局设置',
+        },
+        title: '导出数据',
+      },
+      import: {
+        button: '导入',
+        title: '导入数据',
+      },
+      title: '高级操作',
+    },
+    desc: '当前浏览器中的存储用量',
+    embeddings: {
+      used: '向量存储',
+    },
+    title: '数据存储',
+    used: '存储用量',
   },
   submitAgentModal: {
     button: '提交助手',
@@ -441,6 +484,7 @@ export default {
     'hotkey': '快捷键',
     'llm': '语言模型',
     'provider': 'AI 服务商',
+    'storage': '数据存储',
     'sync': '云端同步',
     'system-agent': '系统助手',
     'tts': '语音服务',

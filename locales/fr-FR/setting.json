@@ -6,6 +6,7 @@
     "chat": "Préférences de discussion",
     "meta": "Informations de l'agent",
     "modal": "Paramètres du modèle",
+    "opening": "Paramètres d'ouverture",
     "plugin": "Paramètres du plugin",
     "prompt": "Configuration du rôle",
     "tts": "Service vocal"
@@ -253,6 +254,21 @@
       "title": "Ouverture d'esprit"
     }
   },
+  "settingOpening": {
+    "openingMessage": {
+      "desc": "Message d'ouverture lors de l'initiation de la conversation, utilisé pour présenter les fonctionnalités de l'assistant",
+      "placeholder": "Bonjour, je suis l'assistant personnalisé, vous pouvez commencer à discuter avec moi immédiatement ou aller dans les paramètres de l'assistant pour compléter mes informations.",
+      "title": "Message d'ouverture"
+    },
+    "openingQuestions": {
+      "desc": "Questions d'orientation affichées au début de la conversation",
+      "empty": "Aucune question pour le moment",
+      "placeholder": "Veuillez entrer une question",
+      "repeat": "La question existe déjà",
+      "title": "Questions d'ouverture"
+    },
+    "title": "Paramètres d'ouverture"
+  },
   "settingPlugin": {
     "title": "Liste des plugins"
   },
@@ -345,6 +361,33 @@
       "title": "Thème"
     },
     "title": "Paramètres du thème"
+  },
+  "storage": {
+    "actions": {
+      "export": {
+        "button": "Exporter",
+        "exportType": {
+          "agent": "Exporter les paramètres de l'agent",
+          "agentWithMessage": "Exporter les paramètres de l'agent et les messages",
+          "all": "Exporter les paramètres globaux et toutes les données des agents",
+          "allAgent": "Exporter tous les paramètres des agents",
+          "allAgentWithMessage": "Exporter tous les agents et les messages",
+          "globalSetting": "Exporter les paramètres globaux"
+        },
+        "title": "Exporter les données"
+      },
+      "import": {
+        "button": "Importer",
+        "title": "Importer les données"
+      },
+      "title": "Opérations avancées"
+    },
+    "desc": "Utilisation du stockage dans le navigateur actuel",
+    "embeddings": {
+      "used": "Stockage des vecteurs"
+    },
+    "title": "Stockage des données",
+    "used": "Utilisation du stockage"
   },
   "submitAgentModal": {
     "button": "Soumettre l'agent",
@@ -439,6 +482,7 @@
     "hotkey": "Raccourcis clavier",
     "llm": "Modèle de langue",
     "provider": "Fournisseur de services d'IA",
+    "storage": "Stockage des données",
     "sync": "Synchronisation cloud",
     "system-agent": "Agent système",
     "tts": "Service vocal"
