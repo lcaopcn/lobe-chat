@@ -4,17 +4,23 @@ dotenv.config();
 
 const packageJSON = require('./package.json');
 
-const channel = process.env.UPDATE_CHANNEL || 'stable';
+const channel = process.env.UPDATE_CHANNEL;
 
 console.log(`🚄 Build Version ${packageJSON.version}, Channel: ${channel}`);
 
 const isNightly = channel === 'nightly';
+const isBeta = packageJSON.name.includes('beta');
+
 /**
  * @type {import('electron-builder').Configuration}
  * @see https://www.electron.build/configuration
  */
 const config = {
-  appId: isNightly ? 'com.lobehub.lobehub-desktop-nightly' : 'com.lobehub.lobehub-desktop',
+  appId: isNightly
+    ? 'com.lobehub.lobehub-desktop-nightly'
+    : isBeta
+      ? 'com.lobehub.lobehub-desktop-beta'
+      : 'com.lobehub.lobehub-desktop',
   appImage: {
     artifactName: '${productName}-${version}.${ext}',
   },
@@ -48,34 +54,37 @@ const config = {
   mac: {
     compression: 'maximum',
     entitlementsInherit: 'build/entitlements.mac.plist',
-    extendInfo: [
-      { NSCameraUsageDescription: "Application requests access to the device's camera." },
-      { NSMicrophoneUsageDescription: "Application requests access to the device's microphone." },
-      {
-        NSDocumentsFolderUsageDescription:
-          "Application requests access to the user's Documents folder.",
-      },
-      {
-        NSDownloadsFolderUsageDescription:
-          "Application requests access to the user's Downloads folder.",
-      },
-    ],
+    extendInfo: {
+      NSCameraUsageDescription: "Application requests access to the device's camera.",
+      NSDocumentsFolderUsageDescription:
+        "Application requests access to the user's Documents folder.",
+      NSDownloadsFolderUsageDescription:
+        "Application requests access to the user's Downloads folder.",
+      NSMicrophoneUsageDescription: "Application requests access to the device's microphone.",
+    },
     gatekeeperAssess: false,
     hardenedRuntime: true,
     notarize: true,
-    target: [
-      { arch: ['x64', 'arm64'], target: 'dmg' },
-      { arch: ['x64', 'arm64'], target: 'zip' },
-    ],
+    target:
+      // 降低构建时间，nightly 只打 arm64
+      isNightly
+        ? [{ arch: ['arm64'], target: 'dmg' }]
+        : [
+            { arch: ['x64', 'arm64'], target: 'dmg' },
+            { arch: ['x64', 'arm64'], target: 'zip' },
+          ],
   },
   npmRebuild: true,
   nsis: {
+    allowToChangeInstallationDirectory: true,
     artifactName: '${productName}-${version}-setup.${ext}',
     createDesktopShortcut: 'always',
-    // allowToChangeInstallationDirectory: true,
-    // oneClick: false,
+    installerHeader: './build/nsis-header.bmp',
+    installerSidebar: './build/nsis-sidebar.bmp',
+    oneClick: false,
     shortcutName: '${productName}',
     uninstallDisplayName: '${productName}',
+    uninstallerSidebar: './build/nsis-sidebar.bmp',
   },
   publish: [
     {
